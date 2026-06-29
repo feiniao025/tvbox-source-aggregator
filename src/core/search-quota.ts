@@ -77,7 +77,7 @@ export function applySearchQuota(
     if (site.searchable !== 1) return site;
     const sourceName = siteSourceMap.get(site.key);
     if (sourceName && site.name && !site.name.includes('「')) {
-      const label = sourceName.length > 6 ? sourceName.substring(0, 6) : sourceName;
+      const label = sourceName.length > 6 ? sourceName.substring(0, 60) : sourceName;
       return { ...site, name: `${site.name} 「${label}」` };
     }
     return site;
